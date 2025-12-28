@@ -58,19 +58,17 @@ function render(numberOfUnits) {
     for (let i = 0; i < conversions.length; i++) {
         const metricUnitString = getUnitString(numberOfUnits, conversions[i].metricSingular, conversions[i].metricPlural)
         const imperialUnitString = getUnitString(numberOfUnits, conversions[i].imperialSingular, conversions[i].imperialPlural)
-        const imperialValue = calculateValue(numberOfUnits, conversions[i].conversionFactor, true)
-        const metricValue = calculateValue(numberOfUnits, conversions[i].conversionFactor, false)
+        const imperialResult = calculateValue(numberOfUnits, conversions[i].conversionFactor, true)
+        const metricResult = calculateValue(numberOfUnits, conversions[i].conversionFactor, false)
 
         innerHTML += `
             <div class="conversion-info-container">
                 <h2 class="measurement">${conversions[i].title}</h2>
-                <div class="conversion">
-                    <p>
-                    ${numberOfUnits} ${metricUnitString} = ${imperialValue} ${conversions[i].imperialPlural} 
+                <h3 class="conversion">
+                    ${numberOfUnits} ${metricUnitString} = ${imperialResult} ${conversions[i].imperialPlural} 
                     | 
-                    ${numberOfUnits} ${imperialUnitString} = ${metricValue} ${conversions[i].metricPlural}
-                    </p>
-                </div>
+                    ${numberOfUnits} ${imperialUnitString} = ${metricResult} ${conversions[i].metricPlural}
+                </h3>
             </div>  
         `
     }
