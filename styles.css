@@ -23,6 +23,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    padding-bottom: 10px
 }
 
 h1 {
@@ -42,6 +43,11 @@ h1 {
     color: #FFFFFF;
     text-align: center;
     font-family: inherit;
+}
+
+#input-elem-label {
+    color: #FFFFFF;
+    font-weight: bold;
 }
 
 #convert-btn {
